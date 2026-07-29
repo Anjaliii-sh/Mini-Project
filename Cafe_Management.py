@@ -31,18 +31,21 @@ for i in menu_list :
 if (order_present == False) :
     print("Sorry, order not available")
 
-Ask = input("Do you want anything else ? ")
-if(Ask == "Yes") :
-
-    order = input("What would you like to order ? ")
+Ask = input("Do you want anything else (Yes / No) ? ")
+while(Ask == "Yes") :
+    order = input("What would you like to order (Your Order / Nothing) ? ")
     for i in menu_list :
         if (order == i.Item) :
             print("You ordered",i.Item,"and that will be Rs.",i.Price)
             amt+= i.Price
             break
+        
+    if (order == "Nothing") :
+        break
 if(Ask == "No") :
     print("Okay")
 
-
+print("                                                                      ")
 print("Total amount is - ",amt)
-print("Thank You,Have a nice day")
+print("                                                                      ")
+print("Thank You, Have a nice day")
